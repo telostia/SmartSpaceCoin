@@ -10,11 +10,11 @@ Ethereum(ETH): 0xbe6337bb3967b4d6d7d2931e7f2b523ff63ecf19
 
 ----
 
-### Install Wallet
+### Wallet Installation
 * [SmartSpace Windows Qt Wallet Install Guide](guides/SMRT_Wallet_Win_Guide.md)
 
 
-### Install Masternode
+### Masternode Installation
 * [SmartSpace Linux MasterNode Hot Wallet & Windows Cold Wallet Install Guide](guides/SMRT_Masternode_Linux_Win_Guide.md)
 
 
