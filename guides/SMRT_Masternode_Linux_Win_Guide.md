@@ -8,8 +8,9 @@
 
 ## Requirements
 * Windows 7 or higher (as your Cold wallet)
-* Ubuntu 16.04 running on a VPS 24/7 such as <a href="https://www.vultr.com/?ref=7414835" target="_blank">Vultr (stable and cheap host)</a>, or other VPS provider (as your Hot wallet)
+* Linux VPS (Ubuntu 16.04 64 bit) that running 24/7 such as <a href="https://www.vultr.com/?ref=7414835" target="_blank">Vultr (stable and cheap host)</a>, or other VPS provider (as your Hot wallet)
 * Static IP Address
 * Basic Linux skills
+* SSH client, to connect to Linux VPS. Recommend [PuTTY](https://putty.org)
 
 ---
