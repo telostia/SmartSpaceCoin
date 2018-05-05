@@ -1,6 +1,8 @@
 ## SmartSpace Coin (SMRT): Linux MasterNode Hot Wallet & Windows Cold Wallet Install Guide
 
-**IMPORTANT: Strongly suggest that not to run a masternode (Hot wallet) at home. It's not safe as your IP address can be traced back to your home. However, you can still run a Cold wallet at home.**
+**IMPORTANT:**<br>
+**1. Strongly suggest that not to run a masternode (Hot wallet) at home. It's not safe as your IP address can be traced back to your home.**<br>
+**2. However, you can still run a Cold wallet at home.**
 
 ---
 
