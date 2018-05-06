@@ -74,3 +74,27 @@ A long private key will be displayed (example as per below) and required for bot
 > * The transaction is less than 16 confirmation and you would need to wait until 16 confirmation.
 
 ---
+
+### 4. Configure masternode.
+
+#### a. From the top menu, go to Tools -> Open Masternode Configuration File
+#### b. You will be prompted to choose a program to run masternode.conf, select notepad.exe
+#### c. Append on new line in masternode.conf file with follong setting;
+> masternode.conf setting syntax;
+```
+address_label vps_ip_address:52310 masternode_genkey masternode_outputs-txhash masternode_outputs-outputidx
+```
+
+> Example setting syntax;
+```
+MN1 198.8.66.9:52310 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
+```
+>  address_label = `MN1`, the label name that enter earlier when create new wallet address
+ 
+>  vps_ip_address = `198.8.66.9`, the public IP of your VPS
+ 
+>  masternode_genkey = `93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg`, the masternode's private key from `masternode genkey`
+ 
+>  masternode_outputs-txhash = `2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c`, the masternode's txhash from `masternode outputs`
+ 
+>  masternode_outputs-outputidx = `0`, the masternode's outputidx from `masternode outputs`. It could either '0' or '1'
