@@ -33,7 +33,7 @@ NOTED:<br>
 #### e. Let the wallet sync until you see the tick symbol on the right bottom
 ![Alt text](https://github.com/ButterX/SmartSpaceCoin/blob/master/images/smrt-windows-wallet-sync.png "Wallet Sync status")
 
-> IMPORTANT: It's recommend that you encrypt your wallet with long and strong passphrase. Jot down the passphrase and keep it safe. Do not reveal your password as this is your key to access your wallet and perform SmartSpace coin transaction.<br>
+> IMPORTANT: It's recommend that you encrypt your wallet with long and strong passphrase. Jot down the passphrase and keep it safe. Do not reveal your password as this is your key to access your wallet and able to perform SmartSpace coin transaction.<br>
 To encrypt the wallet, go to Settings -> Encrypt Wallet. Enter the passphrase, then click "OK" button to activate.
 
 ---
