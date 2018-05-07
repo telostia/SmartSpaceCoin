@@ -109,6 +109,8 @@ NOTED:<br>
 ### 1. Launch PuTTY application and login into VPS as root. Install and update all the pre-requisite packages
 
 ```
+sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get -y install wget nano git unrar unzip
 sudo apt-get -y install build-essential libtool autotools-dev automake autoconf pkg-config libssl-dev software-properties-common
