@@ -150,9 +150,8 @@ sudo ufw status
 
 ```
 sudo mkdir smrt
-sudo chmod 777 smrt
- 
 cd smrt
+ 
 sudo wget https://github.com/smrt-crypto/smrt/releases/download/v1.1.0.5/smrtd-lin64
 sudo chmod 777 smrtd-lin64
 sudo cp smrtd-lin64 /usr/local/bin/smrtd
