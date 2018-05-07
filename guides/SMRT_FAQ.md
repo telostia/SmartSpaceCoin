@@ -1,12 +1,13 @@
 ## SmartSpace Coin (SMRT): MasterNode Frequently Asked Questions
 
  
-
+ 
 ### 1. Why I got BLANK result from 'masternode outputs' command ?
  
-It could be following reason :-
+It could be following reasons :-
  
 a. You may not sent EXACTLY 5,000 SMRT in a single transaction. Therefore, you can send all the coins to another address within your wallet and make that received address as your MasterNode collateral.
+ 
 b. The transaction is less than 16 confirmation. You would need to wait until 16 confirmation and then try 'masternode outputs' command again.
  
 ---
