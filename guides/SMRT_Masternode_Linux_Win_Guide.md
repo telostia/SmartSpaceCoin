@@ -28,7 +28,7 @@ NOTED:<br>
 #### b. Double click on smrt-qt-win64.exe or smrt-qt-win32.exe
 #### c. Click "Yes" button if you get 'unknown publisher' warning as per below:
 ![Alt text](https://github.com/ButterX/SmartSpaceCoin/blob/master/images/smrt-windows-install-warning.png "Install Unknown Publisher Warning")
-#### d. If you first time run the wallet, a pop-up screen will prompt for Data Directory. By default, it will store in [%AppData%]\Roaming\SMRT\ directory. Recommend you to enter **C:\WalletData\SMRT** directory insteads as it will be easier for you to find the wallet config and data files
+#### d. If you first time run the wallet, a pop-up screen will prompt for Data Directory. By default, it will store in `%AppData%\SMRT\` directory. Recommend you to enter **C:\WalletData\SMRT** directory insteads as it will be easier for you to find the wallet config and data files
 ![Alt text](https://github.com/ButterX/SmartSpaceCoin/blob/master/images/smrt-windows-data-directory.png "Wallet Data Directory prompt")
 #### e. Let the wallet sync until you see the tick symbol on the right bottom
 ![Alt text](https://github.com/ButterX/SmartSpaceCoin/blob/master/images/smrt-windows-wallet-sync.png "Wallet Sync status")
