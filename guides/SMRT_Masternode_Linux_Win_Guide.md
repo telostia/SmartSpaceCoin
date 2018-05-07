@@ -135,7 +135,7 @@ echo '/mnt/1500MB.swap none swap sw 0 0' >> /etc/fstab
 free -h
 ```
 
-### 3. Enable firewall and allow SSH (25) and 52310 ports only
+### 3. Enable firewall and allow SSH (22) and 52310 ports only
 
 ```
 sudo ufw allow 22/tcp
