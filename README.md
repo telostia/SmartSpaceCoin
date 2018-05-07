@@ -10,10 +10,6 @@ Thank you for stopping by. If this help you and you love me, any donation is gre
 
 ----
 
-### Wallet Installation
-* [SmartSpace Windows Qt Wallet Install Guide](guides/SMRT_Wallet_Win_Guide.md)
-
-
 ### Masternode Installation
 * [SmartSpace Linux MasterNode Hot Wallet & Windows Cold Wallet Install Guide](guides/SMRT_Masternode_Linux_Win_Guide.md)
 
