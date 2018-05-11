@@ -63,7 +63,8 @@ A long private key will be displayed (example as per below) and required for bot
 sudo nano /etc/network/interfaces
 ```
 
-#### b. Paste the lines of code into file and ctrl x to save file
+#### b. Paste the lines of code into the editor
+![Alt text](https://github.com/ButterX/SmartSpaceCoin/blob/master/images/smrt-vultr-vps-interfaces-configuration.png "VPS Interfaces Configuration")
 
 Below are the example of the network configuration codes
 ```
