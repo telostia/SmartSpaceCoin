@@ -153,11 +153,7 @@ sudo mkdir smrt
 cd smrt
  
 sudo wget https://github.com/smrt-crypto/smrt/releases/download/v1.1.0.5/smrtd-lin64
-sudo chmod 777 smrtd-lin64
- 
 sudo wget https://github.com/smrt-crypto/smrt/releases/download/v1.1.0.5/smrt-cli-lin64
-sudo chmod 777 smrt-cli-lin64
-
 cd ~
 ```
 
