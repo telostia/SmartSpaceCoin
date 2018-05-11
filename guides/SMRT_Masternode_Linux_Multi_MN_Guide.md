@@ -101,3 +101,104 @@ sudo reboot
 
 ---
  
+## **Part 3**: Linux (Ubuntu) Hot Wallet Installation on Subsequent User
+
+### 1. Create subsequent user and copy SmartSpace client and daemon into new user's home dir.
+
+>sudo useradd -m $USERNAME -s /bin/bash<br>
+>sudo passwd $USERNAME<br>
+> 
+>sudo mkdir /home/$USERNAME/smrt<br>
+>sudo cp ~/smrt/smrtd-lin64 /home/$USERNAME/smrt/smrtd<br>
+>sudo cp ~/smrt/smrt-cli-lin64 /home/$USERNAME/smrt/smrt-cli<br>
+>
+>sudo chmod 777 /home/$USERNAME/smrt/smrtd<br>
+>sudo chmod 777 /home/$USERNAME/smrt/smrt-cli<br>
+
+Example commands, by replace *$USERNAME* syntax with `mn2` as new user
+```
+sudo useradd -m mn2 -s /bin/bash
+sudo passwd mn2
+
+sudo mkdir /home/mn2/smrt
+sudo cp ~/smrt/smrtd-lin64 /home/mn2/smrt/smrtd
+sudo cp ~/smrt/smrt-cli-lin64 /home/mn2/smrt/smrt-cli
+
+sudo chmod 777 /home/mn2/smrt/smrtd
+sudo chmod 777 /home/mn2/smrt/smrt-cli
+```
+
+### 2. Run the SmartSpace client and daemon via newly created user login
+
+>su - $USERNAME -c "~/smrt/smrtd --daemon"
+
+Example commands, by replace *$USERNAME* syntax with `mn2` as new user
+```
+su - mn2 -c "~/smrt/smrtd --daemon"
+```
+ 
+#### a. You will get an error when start the wallet, `Error: To use smrtd, or the -server option to smrt-qt, you must set an rpcpassword in the configuration file...`. That is correct behaviour as you do not have any config file yet
+#### b. The service will create the initial data directory(~/.smrt/).
+
+### 3. Edit MasterNode wallet configure file
+
+>sudo nano /home/$USERNAME/.smrt/smrt.conf
+
+Example commands, by replace *$USERNAME* syntax with `mn2` as new user
+```
+sudo nano /home/mn2/.smrt/smrt.conf
+```
+
+#### a. Enter following configuration details and change `[$rpc_user]`, `[$rpc_password]`, `[$vps_ip_address]` & `[$cold_wallet_masternode_genkey]` (from Part 1, step 2) accordingly
+```
+rpcuser=[$rpc_user]
+rpcpassword=[$rpc_password]
+rpcallowip=127.0.0.1
+rpcport=52312
+listen=1
+server=1
+daemon=1
+listenonion=0
+externalip=[$vps_ip_address]
+bind=[$vps_ip_address]:52310
+masternode=1
+masternodeprivkey=[$cold_wallet_masternode_genkey]
+```
+ 
+#### b. Exit the editor by hit CTRL + X and then hit Y follow by 'ENTER' to commit the configuration changes
+
+Below are the example configuration for smrt.conf file
+```
+pcuser=smrtrpcuser
+rpcpassword=Long&StrongPASSWORD123$%^
+rpcallowip=127.0.0.1
+rpcport=52312
+listen=1
+server=1
+daemon=1
+listenonion=0
+externalip=108.61.188.28
+bind=108.61.188.28:52310
+masternode=1
+masternodeprivkey=86Vh9t1mJMJN7quwEzyiFcc12Y1EWaKikiy6Mgc36Z4Ux7BbmN2
+```
+> NOTE: `rpcport` value can not be repeated from previous user in one VPS. For example, if you use `52311` for `MN1` user then you can increase the port no by 1, `52312` for `MN2` user.
+
+### 3. Re-run the smrtd and wait until the wallet is synced with latest block
+
+>su - $USERNAME -c "~/smrt/smrtd --daemon"
+
+Example commands, by replace *$USERNAME* syntax with `mn2` as new user
+```
+su - mn2 -c "~/smrt/smrtd --daemon"
+```
+
+Run the following command every few mins until the block count is match with [SMRT Explorer](http://explorer.smrtcoin.org)
+>su - $USERNAME -c "~/smrt/smrt-cli getinfo"
+
+Example commands, by replace *$USERNAME* syntax with `mn2` as new user
+```
+su - mn2 -c "~/smrt/smrt-cli getinfo"
+```
+
+---
