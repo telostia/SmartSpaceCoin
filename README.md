@@ -12,6 +12,7 @@ Thank you for stopping by. If this help you and you love me, any donation is gre
 
 ### Masternode Installation
 * [SmartSpace Linux MasterNode Hot Wallet & Windows Cold Wallet Install Guide](guides/SMRT_Masternode_Linux_Win_Guide.md)
+* [SmartSpace Multi-MasterNode in One Linux Server Guide](guides/SMRT_Masternode_Linux_Multi_MN_Guide.md)
 
 
 ### FAQ
