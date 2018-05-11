@@ -90,7 +90,7 @@ iface ens3:1 inet static
 #### d. Activate the alias network
 
 ```
-ifup ens3:0
+ifup ens3:1
 ```
 
 #### e. Restart your VPS take effect on latest network configurations
