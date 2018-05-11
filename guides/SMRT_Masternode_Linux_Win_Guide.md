@@ -239,8 +239,11 @@ masternodeprivkey=93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg
 
 ### 8. Re-run the smrtd and wait until the wallet is synced with latest block
 
+>su - $USERNAME -c "~/smrt/smrtd --daemon"
+
+Example commands, by replace *$USERNAME* syntax with `mn1` as new user
 ```
-su - $USERNAME -c "~/smrt/smrtd --daemon"
+su - mn1 -c "~/smrt/smrtd --daemon"
 ```
 
 Run the following command every few mins until the block count is match with [SMRT Explorer](http://explorer.smrtcoin.org)
@@ -289,10 +292,17 @@ MN1 45.77.52.239:52310 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3
 
 ### 2. Check whether your MasterNode is enabled
  
-#### Go back to the Linux VPS console and run the following command: `smrt-cli masternode status`
+#### Go back to the Linux VPS console and run the following command to check the MasterNode status
+ 
+>su - $USERNAME -c "~/smrt/smrt-cli masternode status"`
+
+Example commands, by replace *$USERNAME* syntax with `mn1` as new user
+```
+su - mn1 -c "~/smrt/smrt-cli masternode status"`
+```
 The status shall display `Masternode successfully started` if all the steps above are follow correctly.
  
-It may take at least 3 hours or longer to get the first rewards.
+It may take at least 5 hours or longer to get the first rewards, depend on the current blocks and number of active masternodes in the network.
 
 ---
  
