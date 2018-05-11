@@ -238,11 +238,11 @@ MN2 108.61.188.28:52310 86Vh9t1mJMJN7quwEzyiFcc12Y1EWaKikiy6Mgc36Z4Ux7BbmN2 8bf2
  
 #### Go back to the Linux VPS console and run the following command to check the MasterNode status
  
->su - $USERNAME -c "~/smrt/smrt-cli masternode status"`
+>su - $USERNAME -c "~/smrt/smrt-cli masternode status"
 
 Example commands, by replace *$USERNAME* syntax with `mn2` as new user
 ```
-su - mn2 -c "~/smrt/smrt-cli masternode status"`
+su - mn2 -c "~/smrt/smrt-cli masternode status"
 ```
 The status shall display `Masternode successfully started` if all the steps above are follow correctly.
  
