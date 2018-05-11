@@ -202,3 +202,57 @@ su - mn2 -c "~/smrt/smrt-cli getinfo"
 ```
 
 ---
+
+## **Part 4**: Subsequent Masternode Configuration and Activation
+ 
+### 1. Configure and enable masternode.
+
+#### a. Launch your Cold Wallet from Windows machine. From the top menu, go to Tools -> Open Masternode Configuration File
+#### b. *Append* on new line in masternode.conf file with follong setting;
+> masternode.conf setting syntax;
+```
+address_label vps_ip_address:52310 masternode_genkey masternode_outputs-txhash masternode_outputs-outputidx
+```
+
+> Example setting syntax;
+```
+MN2 108.61.188.28:52310 86Vh9t1mJMJN7quwEzyiFcc12Y1EWaKikiy6Mgc36Z4Ux7BbmN2 8bf27e99efe8ccfd0g486019de25531fe7088a2fd24dd647e56eac39ce75557f 0
+```
+>  address_label = `MN2`, the label name that enter earlier when create new wallet address
+ 
+>  vps_ip_address = `108.61.188.28`, the additional public IP of your VPS
+ 
+>  masternode_genkey = `86Vh9t1mJMJN7quwEzyiFcc12Y1EWaKikiy6Mgc36Z4Ux7BbmN2`, the masternode's private key from `masternode genkey`
+ 
+>  masternode_outputs-txhash = `8bf27e99efe8ccfd0g486019de25531fe7088a2fd24dd647e56eac39ce75557f`, the masternode's txhash from `masternode outputs`
+ 
+>  masternode_outputs-outputidx = `0`, the masternode's outputidx from `masternode outputs`. It could be either '0' or '1', both value are just fine.
+ 
+#### c. Close and re-launch the SMRT-Qt wallet to take effect on the latest change on MasterNode configuration
+#### d. Go to 'Masternodes' tab and check if your newly added MasterNode is in the listing. The newly added MasterNode would be in `MISSING` status
+#### e. Select the newly added MasterNode and click on "Start alias" button to enable the MasterNode
+ 
+---
+
+### 2. Check whether your MasterNode is enabled
+ 
+#### Go back to the Linux VPS console and run the following command to check the MasterNode status
+ 
+>su - $USERNAME -c "~/smrt/smrt-cli masternode status"`
+
+Example commands, by replace *$USERNAME* syntax with `mn2` as new user
+```
+su - mn2 -c "~/smrt/smrt-cli masternode status"`
+```
+The status shall display `Masternode successfully started` if all the steps above are follow correctly.
+ 
+------
+ 
+## Donations:
+
+If the guideline above help you and you love me, any donation is greatly appreciated!
+
+**SMRT**: STj7L6LpaB5rYn12b1eZhdksTuSS1xTy47<br>
+**BTC**: 1CUAt6wa9MVVvxfX2wBgjsmQCgHdrQ3tP3<br>
+**LTC**: LTakDgFyrSeztb8DYHSTNnY8BDSVqPmJxU<br>
+**ETH**: 0xbe6337bb3967b4d6d7d2931e7f2b523ff63ecf19
