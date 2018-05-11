@@ -306,7 +306,12 @@ It may take at least 5 hours or longer to get the first rewards, depend on the c
 
 ---
  
-Following are some useful commands for you to troubleshoot if your MasterNode stop working :-
+## Tips
+ 
+### 1. Follow the guide below if you would like add second MasterNode in the same Linux VPS (Ubuntu);
+ [SmartSpace Multi-MasterNode in One Linux Server Guide](SMRT_Masternode_Linux_Multi_MN_Guide.md)
+
+### 2. Following are some useful commands for you to troubleshoot if your MasterNode stop working :-
  
 > `su - $USERNAME -c "~/smrt/smrtd --daemon"` : START the wallet application
 > 
@@ -319,7 +324,6 @@ Following are some useful commands for you to troubleshoot if your MasterNode st
 > `su - $USERNAME -c "~/smrt/smrt-cli getblockcount"` : Check current sync block status
 > 
 > `su - $USERNAME -c "~/smrt/smrt-cli masternode status"` : Check current MasterNode status
- 
  
 > You may check your MasterNode(s) rewards transaction on this blockchain explorer: [http://explorer.smrtcoin.org](http://explorer.smrtcoin.org)
  
