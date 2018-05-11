@@ -146,7 +146,7 @@ sudo ufw --force enable
 sudo ufw status
 ```
 
-### 4. Download SmartSpace wallets and copy to 'bin' directory. Always check for the latest [release](https://github.com/smrt-crypto/smrt/releases)
+### 4. Download SmartSpace client and daemon into 'smrt' directory. Always check for the latest [release](https://github.com/smrt-crypto/smrt/releases)
 
 ```
 sudo mkdir smrt
@@ -154,27 +154,57 @@ cd smrt
  
 sudo wget https://github.com/smrt-crypto/smrt/releases/download/v1.1.0.5/smrtd-lin64
 sudo chmod 777 smrtd-lin64
-sudo cp smrtd-lin64 /usr/local/bin/smrtd
  
 sudo wget https://github.com/smrt-crypto/smrt/releases/download/v1.1.0.5/smrt-cli-lin64
 sudo chmod 777 smrt-cli-lin64
-sudo cp smrt-cli-lin64 /usr/local/bin/smrt-cli
 
 cd ~
 ```
 
-### 5. Run the smrtd
+### 5. Create new user and copy SmartSpace client and daemon into new user's home dir.
 
+>sudo useradd -m $USERNAME -s /bin/bash<br>
+>sudo passwd $USERNAME<br>
+> 
+>sudo mkdir /home/$USERNAME/smrt<br>
+>sudo cp ~/smrt/smrtd-lin64 /home/$USERNAME/smrt/smrtd<br>
+>sudo cp ~/smrt/smrt-cli-lin64 /home/$USERNAME/smrt/smrt-cli<br>
+>
+>sudo chmod 777 /home/$USERNAME/smrt/smrtd<br>
+>sudo chmod 777 /home/$USERNAME/smrt/smrt-cli<br>
+
+Example commands, by replace *$USERNAME* syntax with `mn1` as new user
 ```
-smrtd --daemon
+sudo useradd -m mn1 -s /bin/bash
+sudo passwd mn1
+
+sudo mkdir /home/mn1/smrt
+sudo cp ~/smrt/smrtd-lin64 /home/mn1/smrt/smrtd
+sudo cp ~/smrt/smrt-cli-lin64 /home/mn1/smrt/smrt-cli
+
+sudo chmod 777 /home/mn1/smrt/smrtd
+sudo chmod 777 /home/mn1/smrt/smrt-cli
 ```
+
+### 6. Run the SmartSpace client and daemon via newly created user login
+
+>su - $USERNAME -c "~/smrt/smrtd --daemon"
+
+Example commands, by replace *$USERNAME* syntax with `mn1` as new user
+```
+su - mn1 -c "~/smrt/smrtd --daemon"
+```
+ 
 #### a. You will get an error when start the wallet, `Error: To use smrtd, or the -server option to smrt-qt, you must set an rpcpassword in the configuration file...`. That is correct behaviour as you do not have any config file yet
 #### b. The service will create the initial data directory(~/.smrt/).
 
-### 6. Edit MasterNode wallet configure file
+### 7. Edit MasterNode wallet configure file
 
+>sudo nano /home/$USERNAME/.smrt/smrt.conf
+
+Example commands, by replace *$USERNAME* syntax with `mn1` as new user
 ```
-sudo nano /root/.smrt/smrt.conf
+sudo nano /home/mn1/.smrt/smrt.conf
 ```
 
 #### a. Enter following configuration details and change `[$rpc_user]`, `[$rpc_password]`, `[$vps_ip_address]` & `[$cold_wallet_masternode_genkey]` (from Part 1, step 3) accordingly
@@ -211,16 +241,19 @@ masternode=1
 masternodeprivkey=93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg
 ```
 
-### 7. Re-run the smrtd and wait until the wallet is synced with latest block
+### 8. Re-run the smrtd and wait until the wallet is synced with latest block
 
 ```
-smrtd --daemon
+su - $USERNAME -c "~/smrt/smrtd --daemon"
 ```
 
 Run the following command every few mins until the block count is match with [SMRT Explorer](http://explorer.smrtcoin.org)
+>su - $USERNAME -c "~/smrt/smrt-cli getinfo"
+
+Example commands, by replace *$USERNAME* syntax with `mn1` as new user
 ```
-smrt-cli getinfo
-``` 
+su - mn1 -c "~/smrt/smrt-cli getinfo"
+```
 
 ---
 
@@ -269,17 +302,17 @@ It may take at least 3 hours or longer to get the first rewards.
  
 Following are some useful commands for you to troubleshoot if your MasterNode stop working :-
  
->  `smrtd --daemon"` : START the wallet application
-
->  `ps aux | grep smrtd | grep -v grep` : Check current SMRTD service
- 
->  `smrt-cli stop` : STOP the wallet application
- 
->  `smrt-cli getinfo` : Check current wallet application status
- 
->  `smrt-cli getblockcount` : Check current sync block status
- 
->  `smrt-cli masternode status` : Check current MasterNode status
+> `su - $USERNAME -c "~/smrt/smrtd --daemon"` : START the wallet application
+> 
+> `ps aux | grep smrtd | grep -v grep` : Check current SMRTD service
+> 
+> `su - $USERNAME -c "~/smrt/smrt-cli stop"` : STOP the wallet application
+> 
+> `su - $USERNAME -c "~/smrt/smrt-cli getinfo"` : Check current wallet application status
+> 
+> `su - $USERNAME -c "~/smrt/smrt-cli getblockcount"` : Check current sync block status
+> 
+> `su - $USERNAME -c "~/smrt/smrt-cli masternode status"` : Check current MasterNode status
  
  
 > You may check your MasterNode(s) rewards transaction on this blockchain explorer: [http://explorer.smrtcoin.org](http://explorer.smrtcoin.org)
