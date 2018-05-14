@@ -51,14 +51,14 @@ To encrypt the wallet, go to Settings -> Encrypt Wallet. Enter the passphrase, t
 
 ### 3. Obtain MasterNode private key and transaction of the collateral transfer information.
 #### a. From the top menu, go to Tools -> Debug console
-#### b. Run the following command: 'masternode genkey'
+#### b. Run the following command: `masternode genkey`
 ![Alt text](https://github.com/ButterX/SmartSpaceCoin/blob/master/images/smrt-windows-wallet-genkey.png "Wallet masternode genkey")
 A long private key will be displayed (example as per below) and required for both Cold and Hot wallet configuration later on:
 ```
 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg
 ```
 
-#### c. Continue to run following command: 'masternode outputs'
+#### c. Continue to run following command: `masternode outputs`
 'txhash' (Transaction Id) and 'outputidx' information will be displayed (example as per below) and required for Cold wallet configuration later on:
 ```
 [
