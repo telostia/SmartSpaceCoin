@@ -123,15 +123,15 @@ sudo apt-get -y install libdb4.8-dev libdb4.8++-dev
 sudo apt-get -y install libdb5.3-dev libdb5.3++-dev
 ```
 
-### 2. Swap setup to avoid running out of memory, swap 1.5 GB
+### 2. Swap setup to avoid running out of memory, swap 2 GB
 
 ```
-sudo fallocate -l 1500M /mnt/1500MB.swap
-sudo dd if=/dev/zero of=/mnt/1500MB.swap bs=1024 count=1572864
-sudo mkswap /mnt/1500MB.swap
-sudo swapon /mnt/1500MB.swap
-sudo chmod 600 /mnt/1500MB.swap
-echo '/mnt/1500MB.swap none swap sw 0 0' >> /etc/fstab
+sudo fallocate -l 2048M /mnt/swapfile
+sudo dd if=/dev/zero of=/mnt/swapfile bs=1024 count=2M
+sudo mkswap /mnt/swapfile
+sudo swapon /mnt/swapfile
+sudo chmod 600 /mnt/swapfile
+echo '/mnt/swapfile none swap sw 0 0' >> /etc/fstab
 free -h
 ```
 
