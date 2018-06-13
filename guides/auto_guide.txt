@@ -61,7 +61,7 @@ Windows wallet to add masternode
 
 1.   Open the SMRT Coin Desktop Wallet. 
 2.   Go to RECEIVE and create a New Address: MN1 
-3.   Send 5000 DEMOS to MN1. 
+3.   Send 5000 smrt to MN1. 
 4.   Wait for confirmations. 
 5.   Go to Tools -> "Debug console - Console" 
 6.   Type the following command: masternode outputs 
